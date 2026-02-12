@@ -60,7 +60,7 @@ export default function HoldingsView({ trades }) {
         </div>
         <div>
           <p className="text-[11px] text-slate-400 uppercase font-bold tracking-wider mb-1">
-            Realized P&L
+            Unrealized P&L
           </p>
           <p
             className={`text-2xl font-semibold ${totalRealizedPnl >= 0 ? "text-green-600" : "text-red-600"}`}

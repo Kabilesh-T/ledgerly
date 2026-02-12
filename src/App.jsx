@@ -6,6 +6,7 @@ import HoldingsView from "./views/HoldingsView";
 import TradebookView from "./views/TradebookView";
 import Tabs from "./components/Tabs";
 import { TABS } from "./constants/constants";
+import PnlView from "./views/PnlView";
 
 function App() {
   const [trades, setTrades] = useState([]);
@@ -53,11 +54,10 @@ function App() {
         {/* Tabs Navigation */}
         <Tabs activeTab={activeTab} setActiveTab={setActiveTab} />
 
-        {activeTab === TABS.HOLDINGS ? (
-          <HoldingsView trades={trades} />
-        ) : (
-          <TradebookView trades={trades} />
-        )}
+        {/* Views based on tab selected */}
+        {activeTab === TABS.HOLDINGS && <HoldingsView trades={trades} />}
+        {activeTab === TABS.TRADEBOOK && <TradebookView trades={trades} />}
+        {activeTab === TABS.PNL && <PnlView trades={trades} />}
       </div>
     </div>
   );
